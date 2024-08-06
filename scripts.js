@@ -24,7 +24,7 @@ document.getElementById('submitButton2').addEventListener('click', function() {
 
     switch (input) {
         case '楊允488':
-            response = '我先沒有哈';
+            response = '李竹恩';
             break;
         case '林奇恩561':
             response = '你先沒有ㄛ';
@@ -33,7 +33,7 @@ document.getElementById('submitButton2').addEventListener('click', function() {
             response = '蔡悅祈';
             break;
         case '林昱恩363':
-            response = '李竹恩';
+            response = '保重！！';
             break;
         case '葉韋霆432':
             response = '呂潔心';
@@ -42,7 +42,7 @@ document.getElementById('submitButton2').addEventListener('click', function() {
             response = '張承祐';
             break;
         case '蔡悅祈541':
-            response = '林昱恩';
+            response = '玉芳姐';
             break;
         case '何雨諠857':
             response = '徐晨硯';
@@ -90,7 +90,7 @@ document.getElementById('submitButton2').addEventListener('click', function() {
             response = '沒有東西哦';
             break;
         default:
-            response = '啊？有可能是我打錯字，如果沒跑出來請找楊允';
+            response = '啊？輸入錯誤喔，有什麼問題請找楊允。';
     }
 
     document.getElementById('response2').textContent = response;
