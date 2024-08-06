@@ -90,7 +90,7 @@ document.getElementById('submitButton2').addEventListener('click', function() {
             response = '沒有東西哦';
             break;
         default:
-            response = '啊？輸入錯誤喔，有什麼問題請找楊允。';
+            response = '啊？有可能是我打錯字，如果沒跑出來請找楊允';
     }
 
     document.getElementById('response2').textContent = response;
