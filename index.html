@@ -36,12 +36,12 @@
     "762": "2F-08-01"
   };
 
- document.getElementById('prevButton1').addEventListener('click', function () {
+  document.getElementById('prevButton1').addEventListener('click', function () {
   document.getElementById('page2').style.display = 'none';
   document.getElementById('page1').style.display = 'block';
   document.getElementById('passwordInput').value = '';          // 清空輸入框
-  document.getElementById('passwordResult').innerText = '';     // 清除錯誤訊息
-});
+  document.getElementById('passwordResult').innerText = '';
+  });
 
   document.getElementById('checkPasswordButton').addEventListener('click', function () {
     const input = document.getElementById('passwordInput').value.trim();
