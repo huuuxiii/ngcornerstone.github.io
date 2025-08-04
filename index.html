@@ -3,47 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>退修會赴會通知</title>
+    <title>2025年好young營</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="page1" class="page1">
-        <div class="content">
-            <h1>2024房角石退修會</h1>
-            <p>歡迎有報名退修會的各位，這次退修會是希望大家，可以有一段時間浸泡在神的圍繞中，思考自己與神的關係。所以，在出發之前請預備好一顆，敞開的心，渴慕神的心，單單注視祂的心。期待在當中，我們與祂有美好的相遇。</p>
-            <button id="nextButton1">下一頁</button>
-        </div>
-    </div>
-    <div id="page2" class="page2" style="display:none;">
-        <div class="content">
-            <h1>赴會通知</h1>
-            <p>1. 集合地點：北門聖教會</p>
-            <p>2. 集合時間：8/13，早上8:30，巴士9:00準時發車，請準時集合。</p>
-            <p>3. 行李須知：因為巴士容量和人數問題，請盡量不要帶行李箱，改為包包或行李袋。很重要喔！</p>
-            <p>4. 攜帶物品：聖經、筆、水壺、盥洗用具、浴巾、雨傘（遮陽、下雨）、個人用品。</p>
-            <p>5. 繳費：費用1500到當天集合時繳交ㄛ。</p>
-            <p>6. 結束時間：8/15中午離開營地，大約下午2點回到教會。</p>
-            <p>請看下一頁</p>
-            <h2></h2>
-            <button id="prevButton1">上一頁</button>
-            <button id="nextButton2">下一頁</button>
-        </div>
-    </div>
-    <div id="page3" class="page3" style="display:none;">
-        <div class="content">
-            <h1>小天使小主人</h1>
-            <h2>誰是你的小主人呢？</h2>
-            <p>輸入你的全名＋身分證號後三碼，點選確認，出現的人就是你的小主人，從當天集合開始你就是他的小天使。</p>
-            <p>給你一個特別的小任務，請默默的幫助他，讓我們都有個默契，不告訴任何人，只有你跟我知道喔！</p>
+<div id="page1" class="page1">
+  <div class="content">
+    <h1>恭喜你們闖關成功</h1>
+    <p>請在下方輸入你們的專屬密碼</p>
+    <input type="text" id="passwordInput" placeholder="請輸入密碼">
+    <button id="checkPasswordButton">確認</button>
+    <p id="passwordResult"></p>
+  </div>
+</div>
 
-            <input type="text" id="userInput2" placeholder="例：以巴弗123">
-            <button id="submitButton2">確認</button>
-            <p id="response2"></p>
-            <button id="prevButton2">上一頁</button>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
-</body>
-</html>
+<div id="page2" class="page2" style="display:none;">
+  <div class="content">
+    <h1>這是你們的鑰匙位置</h1>
+    <p>請記住你們的鑰匙位置，不要忘記了喔，看完後請按回上一頁。</p>
+    <p id="keyLocation">2F-??-??</p>
+    <button id="prevButton1">上一頁</button>
+  </div>
+</div>
 
+<script>
+  const passwordMap = {
+    "853": "2F-02-03",
+    "247": "2F-07-05",
+    "139": "2F-08-02",
+    "182": "2F-05-01",
+    "432": "2F-07-04",
+    "762": "2F-08-01"
+  };
 
+  document.getElementById('prevButton1').addEventListener('click', function () {
+    document.getElementById('page2').style.display = 'none';
+    document.getElementById('page1').style.display = 'block';
+  });
+
+  document.getElementById('checkPasswordButton').addEventListener('click', function () {
+    const input = document.getElementById('passwordInput').value.trim();
+    const location = passwordMap[input];
+
+    const wrongMessages = [
+      "這也太隨便亂猜了吧 🤨",
+      "密碼錯了喔～再用點心 🤔",
+      "不是這個啦，再想想！🧠",
+      "嗚嗚～不是這組 QQ",
+      "你是來亂的嗎？😂",
+      "欸欸～這是你夢裡看到的密碼嗎？",
+    ];
+
+    if (location) {
+      document.getElementById('keyLocation').innerText = location;
+      document.getElementById('page1').style.display = 'none';
+      document.getElementById('page2').style.display = 'block';
+    } else {
+      const msg = wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
+      document.getElementById('passwordResult').innerText = msg;
+    }
+  });
+</script>
+</body></html>
